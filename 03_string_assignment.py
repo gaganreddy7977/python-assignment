@@ -98,6 +98,11 @@ print(y)
 print("\nQuestion 12: Check if two strings are anagrams: 'listen' and 'silent'")
 x="listen"
 y="silent"
+if sorted(x)==sorted(y):
+    print("yes there are anagrams")
+else:
+    print("there are not anagrams ")
+
 
 
 # Question 13: Capitalize first letter of each word in "python programming language"
@@ -113,7 +118,7 @@ count = 0
 for i in str5:
     if i not in V and i !=' ':
         count +=1
-print(i,end="")
+print(count,end="")
 
 
 # Question 15: Find the longest word in "Python is a programming language"
@@ -177,13 +182,12 @@ print("\nQuestion 23: Convert 'hello world' to 'hElLo WoRlD' (alternating case)"
 x='hello world'
 y=[]
 for i in range(len(x)):
-    if i%2!=0 :
-        y.append(x[i])
-        
-        
-
+    if i%2==0:
+        y+=text[i].lower()
+    else:
+        y+=text[i].upper()
     
-
+print(y)
 
 # Question 24: Find all positions of 'a' in "banana"
 print("\nQuestion 24: Find all positions of 'a' in 'banana'")
@@ -274,6 +278,13 @@ print(str)
 # Question 35: Check if string is a valid phone number: "+1-555-123-4567"
 print("\nQuestion 35: Check if string is a valid phone number: '+1-555-123-4567'")
 x="+1-555-123-4567"
+y=x.replace('-','')
+print(y)
+if y.startswith('+1') and len(y)==12:
+    print("it valid number")
+else:
+    print("it is in valid number")
+
 
 # Question 36: Extract numbers from "abc123def456ghi789"
 print("\nQuestion 36: Extract numbers from 'abc123def456ghi789'")
@@ -285,8 +296,9 @@ for i in str:
 
 # Question 37: Convert "snake_case" to "camelCase"
 print("\nQuestion 37: Convert 'snake_case' to 'camelCase'")
-#str="wow"
-#str2=
+snake_case="hi_reddy"
+camelcase=snake_case.replace('_','')
+print(camelcase)
 
 # Question 38: Check if string is a valid palindrome ignoring case: "A man a plan a canal Panama"
 print("\nQuestion 38: Check if string is a valid palindrome ignoring case: 'A man a plan a canal Panama'")
@@ -302,18 +314,26 @@ else:
 # Question 39: Find the most common word in "the quick brown fox jumps over the lazy dog"
 print("\nQuestion 39: Find the most common word in 'the quick brown fox jumps over the lazy dog'")
 str="the quick brown fox jumps over the lazy dog"
-str1=str.split()
-count=0
-sp=''
-for i in str1:
-    count=str1.count(i)
-    if count > count:
-        count=count
-        sp=i
-    print(sp)
+most_common=''
+max_count=0
+str_spilt=str.split()
 
+print(str_spilt)
+for i in str_spilt:
+    count=0
+    for x in str_spilt:
+        if x==i:
+            count+=1
+    if count>max_count:
+        max_count=count
+        most_common=i
 
-
+print(f"The most common word is '{most_common}' (appears {max_count} times).")
+# take a variable count ,initialize it with 0,
+# split the sentence........assign 1st word to some variable,
+# take a for loop through the splitted sentence is
+#     any word matches the 1st word increase the count and finally 
+# display the word with maximum count
 
 
 # Question 40: Generate acronym from "National Aeronautics and Space Administration"
@@ -374,6 +394,18 @@ print(convert)
 
 # Question 47: Check if string is a valid IPv4 address: "192.168.1.1"
 print("\nQuestion 47: Check if string is a valid IPv4 address: '192.168.1.1'")
+add="192.168.1.1"
+check=add.split('.')
+print("valid")
+
+for i in check:
+     if len(i)==4:
+        print("valid")
+
+     if 0<=int(i)<=255:
+         print("it is valied")
+     else:
+        print("it is not valide")
 
 
 # Question 48: Find all substrings of "abc"
