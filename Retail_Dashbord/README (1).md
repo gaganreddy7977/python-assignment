@@ -46,13 +46,7 @@ source venv/bin/activate   # On Mac/Linux
 venv\Scripts\activate      # On Windows
 ```
 
-3. **Install dependencies**
 
-```bash
-pip install -r requirments.txt
-```
-
----
 
 ## ▶️ Usage
 
@@ -93,18 +87,7 @@ The main dependencies are:
 
 ---
 
-## 📸 Screenshot (Optional)
 
-*(Add a screenshot of the dashboard UI once you run it)*
 
----
 
-## 🤝 Contributing
 
-Pull requests are welcome! For major changes, please open an issue first to discuss your ideas.
-
----
-
-## 📜 License
-
-This project is licensed under the **MIT License** – feel free to use and modify it.
